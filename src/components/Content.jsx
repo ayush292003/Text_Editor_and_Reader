@@ -18,12 +18,7 @@ const Content = () => {
   }
 
   const capitalizeText = () => {
-    /*
-	  / / => syntax of regular expression
-	  \w  => metacharacter matches word characters.
-      \b  => matches the empty string at the beginning or end of a word.
-	  /g  => is for global search
-	*/
+
     let newText = text.replace(/\b(\w)/g, (text) => text.toUpperCase())
     setText(newText)
   }
@@ -42,8 +37,7 @@ const Content = () => {
   }
 
   const removeSpace = () => {
-    // yati 1 ota bhnada badi space xa bhane teyoo chai cut hunxa
-    // i.e sabai space lai array ma store garxa ani remove gardenxa
+   
     let newText = text.split(/[ ] + /)
     setText(newText.join(" "))
   }
@@ -77,7 +71,7 @@ const Content = () => {
     window.speechSynthesis.speak(speech)
   }
   const downloadFile = () => {
-    //function for downloding text
+   
     const file = document.createElement("a")
     let newText = new Blob([text], {
       type: "text/plain",
@@ -176,26 +170,7 @@ const Content = () => {
             <span> justify text</span>
           </button>
         </div>
-        {/*<div className='functionButton'>
-          <button onClick={upperCaseText}>Upper Case</button>
-          <button onClick={lowerCaseText}>Lower Case</button>
-          <button onClick={capitalizeText}>Capitalize </button>
-          <button onClick={copyText}>Copy</button>
-          <button onClick={clearText}>Clear</button>
-          <button onClick={undoText}>Redo </button>
-          <button onClick={removeSpace}>Remove Space</button>
-          <button onClick={underlineText}>Underline Text </button>
-          <button onClick={boldText}>Bold </button>
-          <button onClick={fontSizeInc}>Font Size </button>
-          <button onClick={italicText}>Italic Text </button>
-          <button onClick={searchText}>Search </button>
-          <button onClick={readText}>Read Text </button>
-          <button onClick={downloadFile}>Download </button>
-          <button onClick={centerText}>Center </button>
-          <button onClick={leftText}>Left </button>
-          <button onClick={rightText}>Right </button>
-          <button onClick={rightJustify}>justify </button>
-        </div>*/}
+        {}
         <div className='textView'>
           <textarea cols='30' rows='10' value={text} onChange={changeHandle} id='text'></textarea>
 
